@@ -18,7 +18,7 @@ class MainActivity : Activity() {
         }
 
     fun showJavaClicked(view: View) {
-        startActivity(Intent(this, JavaActivity::class.java))
+        startActivity(Intent(this, PeopleActivity::class.java))
         }
 
     }

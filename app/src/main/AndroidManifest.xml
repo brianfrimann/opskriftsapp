@@ -24,7 +24,8 @@
             </intent-filter
             -->
         </activity>
-        <activity android:name=".PeopleActivity"></activity>
+        <activity android:name=".PeopleActivity" />
+        <activity android:name=".PersonActivity"></activity>
     </application>
 
 </manifest>

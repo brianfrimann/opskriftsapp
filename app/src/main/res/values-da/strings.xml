@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kotlin Anko Skabelon</string>
+    <string name="first_name">Fornavn</string>
+    <string name="last_name">Efternavn</string>
+</resources>

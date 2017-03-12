@@ -40,7 +40,6 @@ class PeopleActivity : ListActivity() {
         }
 
     override fun onListItemClick(l: ListView?, v: View?, position: Int, id: Long) {
-        //longToast("Du trykkede på: $position = ${data.people[position]}")
 //        val intent = Intent(this, PersonActivity::class.java)
 //        intent.putExtra("position", position)
 //        startActivity(intent)

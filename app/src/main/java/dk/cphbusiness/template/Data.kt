@@ -1,45 +1,40 @@
 package dk.cphbusiness.template
 
-data class Pet(var name: String, var age: Int)
+data class Action(var actionTxt: String, var time: Int)
 
-data class Person(
-        var firstName: String,
-        var lastName: String,
-        var email: String,
-        val pets: MutableList<Pet> = mutableListOf()
+data class Ingredient(var ingredientTxt: String, var amount: Int, var messure: String)
+
+data class Recipe(
+        var name: String,
+        var category: String,
+        val actions: MutableList<Action> = mutableListOf(),
+        val ingredients: MutableList<Ingredient> = mutableListOf()
         )
 
 object data {
-    val people = mutableListOf<Person>()
+    val Recipes = mutableListOf<Recipe>()
 
     init {
-        val kurt = Person("Kurt", "Hansen", "kurt@hansen.dk")
-        val sonja = Person("Sonja", "Petterson", "sonja@petterson.se")
-        val ib = Person("Ib", "Nebukanezer", "mail@ib.dk")
+        //Pandekager
+        val pandekager = Recipe("Pandekager", "Dessert")
 
-        val brille = Pet("Brille", 3)
-        val brille2 = Pet("Brille", 3)
-        val linse = brille.copy(name = "Linse")
+        pandekager.ingredients.add(Ingredient("æg", 2, "stk"))
+        pandekager.ingredients.add(Ingredient("mel", 2, "spiseskeer"))
+        pandekager.ingredients.add(Ingredient("mælk", 2, "dl"))
 
-        kurt.pets.add(Pet("Rufus", 5))
-        kurt.pets.add(Pet("King", 7))
-        kurt.pets.add(brille)
+        pandekager.actions.add(Action("Slå æg ud og kom mælk og mel i", 0))
+        pandekager.actions.add(Action("Bag på varm pande", 2))
 
-        kurt.pets
-                .filter { pet -> pet.age > 4 }
-                .forEachIndexed { i, pet -> println("$pet is pet #$i") }
+        //Kødsovs
+        val Kødsovs = Recipe("Kødsovs", "Hovedret")
 
-        sonja.pets.add(Pet("Felix", 10))
-        sonja.pets.add(Pet("Misser", 8))
-        sonja.pets.add(Pet("Pusser", 12))
-        sonja.pets.add(brille)
+        Kødsovs.ingredients.add(Ingredient("Hakket oksekøde", 250, "g"))
+        Kødsovs.ingredients.add(Ingredient("Flåede tomater", 250, "g"))
 
+        Kødsovs.actions.add(Action("Steg det hakkede oksekød", 10))
+        Kødsovs.actions.add(Action("Tilsæt flåede tomat og kog ved svag varme", 30))
 
-        ib.pets.add(Pet("Ninus", 12))
-
-        people.add(kurt)
-        people.add(sonja)
-        people.add(ib)
-
+        Recipes.add(pandekager)
+        Recipes.add(Kødsovs)
         }
     }

@@ -15,17 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".JavaActivity">
-
-            <!--
-            intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter
-            -->
-        </activity>
-        <activity android:name=".PeopleActivity" />
-        <activity android:name=".PersonActivity"></activity>
+        <activity android:name=".RecipeActivity"></activity>
     </application>
 
 </manifest>

@@ -2,7 +2,10 @@ package dk.cphbusiness.template
 
 data class Action(var actionTxt: String, var time: Int)
 
-data class Ingredient(var ingredientTxt: String, var amount: Int, var messure: String)
+data class Ingredient(var ingredientTxt: String, var amount: Int, var measure: String)
+    {
+    override fun toString(): String = "$ingredientTxt : $amount $measure \n"
+    }
 
 data class Recipe(
         var name: String,

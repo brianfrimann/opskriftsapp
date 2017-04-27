@@ -33,12 +33,17 @@
         android:layout_height="wrap_content"
         android:text="Opskrift" />
 
-
     <ListView
         android:id="@+id/listActions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </ListView>
+
+    <TextView
+        android:id="@+id/textIngridienserTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingridienser" />
 
     <Button
         android:id="@+id/ingredientsButton"

@@ -21,11 +21,11 @@ class IngredientListAdapter(context: Context, val ingredients: List<Ingredient>)
         val view = template ?: LayoutInflater
                         .from(context)
                         .inflate(R.layout.item_ingredient, parent, false)
-        view.editName.setText(ingredient.ingredientTxt)
+        view.editIngredientName.setText(ingredient.ingredientTxt)
         view.editAmount.setText(ingredient.amount.toString())
-        view.editMessure.setText(ingredient.messure)
-        view.editName.onKey { v, i, event ->
-            ingredient.ingredientTxt = v.editName.text.toString()
+        view.editMessure.setText(ingredient.measure)
+        view.editIngredientName.onKey { v, i, event ->
+            ingredient.ingredientTxt = v.editIngredientName.text.toString()
             false
             }
         return view

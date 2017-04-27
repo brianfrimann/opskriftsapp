@@ -23,6 +23,14 @@ class ActionListAdapter(context: Context, val actions: List<Action>) :
             action.actionTxt = v.editName.text.toString()
             false
             }
+        view.startTimerButton.onClick {
+            doAsync {
+                Thread.sleep(view.editTime.text.toString().toLong()*60*1000)
+                uiThread {
+                    context.toast("Tiden er nu gået ${view.editName.text}")
+                }
+            }
+        }
         return view
         }
     }

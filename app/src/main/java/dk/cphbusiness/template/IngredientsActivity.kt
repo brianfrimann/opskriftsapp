@@ -6,6 +6,7 @@ import kotlinx.android.synthetic.main.activity_ingredients.*
 import kotlinx.android.synthetic.main.activity_recipe.*
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.onClick
+import org.jetbrains.anko.sendSMS
 import org.jetbrains.anko.toast
 
 class IngredientsActivity : Activity() {
@@ -19,5 +20,9 @@ class IngredientsActivity : Activity() {
             val recipe = data.Recipes[position]
             listIngridients.adapter = IngredientListAdapter(this, recipe.ingredients)
             }
+
+        smsButton.onClick {
+            sendSMS(editSms.text.toString(), data.Recipes[position].ingredients.toString())
         }
     }
+}

@@ -17,11 +17,21 @@
         android:layout_height="wrap_content"
         android:text="Ingridienser" />
 
-
     <ListView
         android:id="@+id/listIngridients"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></ListView>
+
+    <TextView
+        android:id="@+id/textSms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send ingridienser som SMS" />
+
+    <EditText
+        android:id="@+id/editSms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/smsButton"

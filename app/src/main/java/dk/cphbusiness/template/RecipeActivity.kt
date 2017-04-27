@@ -34,13 +34,7 @@ class RecipeActivity : Activity() {
         }
 
         ingredientsButton.onClick {
-            doAsync {
-                Thread.sleep(1000)
-                uiThread {
-                    longToast("test")
-                }
-            }
-            //startActivity(intentFor<IngredientsActivity>("position" to position))
+            startActivity(intentFor<IngredientsActivity>("position" to position))
         }
     }
 }

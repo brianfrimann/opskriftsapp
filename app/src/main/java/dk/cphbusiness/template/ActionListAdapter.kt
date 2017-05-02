@@ -7,12 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_action.view.*
 import org.jetbrains.anko.*
+import android.media.RingtoneManager
+import android.media.Ringtone
+import android.os.Vibrator
 
 
 class ActionListAdapter(context: Context, val actions: List<Action>) :
         ArrayAdapter<Action>(context, 0, actions) {
 
     override fun getView(position: Int, template: View?, parent: ViewGroup): View {
+        val notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
+        val r = RingtoneManager.getRingtone(context, notification)
+
         val action = actions[position]
         val view = template ?: LayoutInflater
                         .from(context)
@@ -28,8 +34,13 @@ class ActionListAdapter(context: Context, val actions: List<Action>) :
                 Thread.sleep(view.editTime.text.toString().toLong()*60*1000)
                 uiThread {
                     context.toast("Tiden er nu gået ${view.editName.text}")
+                    context.vibrator.vibrate(3000)
+                    r.play()
                 }
             }
+        }
+        view.stopTimerButton.onClick {
+            r.stop()
         }
         return view
         }

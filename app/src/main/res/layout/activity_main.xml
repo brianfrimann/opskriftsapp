@@ -15,5 +15,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </ListView>
+    <Button
+        android:id="@+id/NewRecipeButton"
+        android:text="Ny opskrift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        />
 
 </LinearLayout>

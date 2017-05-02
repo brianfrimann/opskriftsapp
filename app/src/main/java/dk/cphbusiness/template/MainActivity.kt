@@ -7,8 +7,10 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.SimpleAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.longToast
+import org.jetbrains.anko.onClick
 import org.jetbrains.anko.toast
 
 class MainActivity : ListActivity() {
@@ -16,6 +18,10 @@ class MainActivity : ListActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        NewRecipeButton.onClick {
+            startActivity(intentFor<RecipeActivity>())
+            }
         }
 
     override fun onResume() {

@@ -1,6 +1,14 @@
 # Opskriftsapp
 Opskriftsapp er en app udviklet af Brian Frimann ifm. eksamen i Programmering til mobile enheder på CPH Business
 
+Opgavedelene er som følgende:
+* Ingrediensliste
+* Evt. med funktion til at tilpasse ovenstående ift. antal personer
+* Vejledninger
+* Timer på stege og kogetider
+* SMS af ingrediensliste, evt de dele man mangler
+* Evt. deling af opskrifter
+
 ## Overblik
 Denne README.md er også rapporten for projektet og indeholder følgende punkter:
 
@@ -61,6 +69,32 @@ smsButton.onClick {
         }
 ```
 
+Derudover er der ændres i, hvordan ingredients toString() fungerer.
+
+```kotlin
+data class Ingredient(var ingredientTxt: String, var amount: Int, var measure: String)
+    {
+    override fun toString(): String = "$ingredientTxt : $amount $measure \n"
+    }
+```
+
 ## Konklusion
+Alt er alt er der lavet en app, der lever op til det meste af det ønskede.
+
+Det har været spændende og lærerigt at lave projektet, og jeg vil glæder mig til at arbejde endnu mere med programmering til mobile enheder.
+
+Der har været en del udfordringer under vejs.
 
 ## Perspektivering
+Det har været spændende fag og jeg har lært rigtig mange ting
+
+* Kotlin
+* Android Studio
+* GitHub
+* Markdown
+
+Alt i alt har jeg lært rigtig mange ting der er brugbart, ikke kun ift. udvikling af apps, men også i mange andre sammenhænge.
+
+Mestrer bestemt ikke Kotlin, men det er spændende har have fået en introduktion til et andet sprog end C# og en anden Ide.
+
+Og GitHub og Markdown kan bestemt bruges i mange andre sammenhænge.

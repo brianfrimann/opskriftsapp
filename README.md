@@ -26,9 +26,9 @@ Derudover indeholder den et listview med de enkelte delelementer og timer på di
 
 Har kigget en del på at få lavet timeren, bl.a. andet via TimerTask, men kunne ikke få det til at virke.
 
-Så endte med at lave en tråd som sover i den tid
+Så endte med at lave en tråd som sover i den tid der står hvorefter at den skriver en toast samt spiller en alarm og vibrerer.
 
-´´´ kotlin
+```kotlin
 view.startTimerButton.onClick {
             doAsync {
                 Thread.sleep(view.editTime.text.toString().toLong()*60*1000)
@@ -39,9 +39,27 @@ view.startTimerButton.onClick {
                 }
             }
         }
-´´´
+```
 
+Alarm fås gennem RingtoneManager.
 
+```Kotlin
+val notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
+        val r = RingtoneManager.getRingtone(context, notification)
+```
+
+### Ingredienslisten
+Ingredienslisten indeholder listview med ingredienser.
+
+Derudover er der forsøgt lavet en funkionalitet som skulle gange opskriften op ift. antal af personer. Men de forsøgte implementationer får appen til at gå ned.
+
+Sidst er der lavet en funktionalitet der kan sende ingredienslisten som SMS.
+
+```kotlin
+smsButton.onClick {
+            sendSMS(editSms.text.toString(), data.Recipes[position].ingredients.toString())
+        }
+```
 
 ## Konklusion
 

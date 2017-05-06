@@ -8,10 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.SimpleAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.intentFor
-import org.jetbrains.anko.longToast
-import org.jetbrains.anko.onClick
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.*
 
 class MainActivity : ListActivity() {
 
@@ -20,12 +17,16 @@ class MainActivity : ListActivity() {
         setContentView(R.layout.activity_main)
 
         NewRecipeButton.onClick {
-            startActivity(intentFor<RecipeActivity>())
-            }
+            startActivity(intentFor<RecipeActivity>("position" to -1))
         }
+    }
 
     override fun onResume() {
         super.onResume()
+//        RecipeDbHelper.instance.use {
+//            val cursor = rawQuery("select * from ${DB.RecipeTable.tableName}", null)
+//            listAdapter = MainCursorAdapter(this@MainActivity, cursor, 0)
+//        }
         listAdapter = SimpleAdapter(
                 this,
                 data.Recipes.map {
@@ -39,8 +40,12 @@ class MainActivity : ListActivity() {
                 )
         }
 
-    override fun onListItemClick(l: ListView?, v: View?, position: Int, id: Long) {
-        startActivity(intentFor<RecipeActivity>("position" to position))
+        override fun onListItemClick(l: ListView?, v: View?, position: Int, id: Long) {
+//            val test = v.tag
+//            if (test is Int)
+//                startActivity(intentFor<RecipeActivity>("test" to test))
+//           else toast("id is corrupt: ${test}")
+            startActivity(intentFor<RecipeActivity>("position" to position))
         }
 
     }

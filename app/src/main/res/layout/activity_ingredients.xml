@@ -12,6 +12,27 @@
     tools:context="dk.cphbusiness.template.RecipeActivity">
 
     <TextView
+        android:id="@+id/textPersons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Antal af personer" />
+
+    <EditText
+        android:id="@+id/editPersons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/personsButton"
+        android:text="Beregn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
         android:id="@+id/textIngridienser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

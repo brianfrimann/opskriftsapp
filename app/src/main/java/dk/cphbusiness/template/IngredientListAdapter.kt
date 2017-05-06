@@ -5,7 +5,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.activity_ingredients.*
+import kotlinx.android.synthetic.main.activity_ingredients.view.*
 import kotlinx.android.synthetic.main.item_action.view.*
+import kotlinx.android.synthetic.main.item_ingredient.*
 import kotlinx.android.synthetic.main.item_ingredient.view.*
 import org.jetbrains.anko.onClick
 import org.jetbrains.anko.onFocusChange
@@ -28,6 +31,9 @@ class IngredientListAdapter(context: Context, val ingredients: List<Ingredient>)
             ingredient.ingredientTxt = v.editIngredientName.text.toString()
             false
             }
+//        view.personsButton.onClick {
+//            view.editAmount.setText((view.editPersons.toString().toInt() * view.editAmount.toString().toInt()).toString())
+//        }
         return view
         }
     }

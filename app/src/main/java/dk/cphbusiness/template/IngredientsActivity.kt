@@ -4,10 +4,8 @@ import android.app.Activity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_ingredients.*
 import kotlinx.android.synthetic.main.activity_recipe.*
-import org.jetbrains.anko.longToast
-import org.jetbrains.anko.onClick
-import org.jetbrains.anko.sendSMS
-import org.jetbrains.anko.toast
+import kotlinx.android.synthetic.main.item_ingredient.*
+import org.jetbrains.anko.*
 
 class IngredientsActivity : Activity() {
 
@@ -15,14 +13,18 @@ class IngredientsActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ingredients)
         val position = intent.getIntExtra("position", -1)
-        if (position == -1) longToast("Desværre")
+        if (position == -1) longToast("Funktionalitet mangler")
         else {
             val recipe = data.Recipes[position]
             listIngridients.adapter = IngredientListAdapter(this, recipe.ingredients)
-            }
+        }
 
         smsButton.onClick {
             sendSMS(editSms.text.toString(), data.Recipes[position].ingredients.toString())
         }
+
+//        personsButton.onClick {
+//            editAmount.setText((editPersons.toString().toInt() * editAmount.toString().toInt()).toString())
+//        }
     }
 }

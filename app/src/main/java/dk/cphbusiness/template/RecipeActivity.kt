@@ -17,7 +17,7 @@ class RecipeActivity : Activity() {
         val position = intent.getIntExtra("position", -1)
         okButton.onClick {
             if (position == -1) {
-                toast("Vi laver en ny")
+                toast("Funktionalitet mangler")
             } else {
                 val recipe = data.Recipes[position]
                 recipe.name = editRecipeName.text.toString()
@@ -25,7 +25,7 @@ class RecipeActivity : Activity() {
             }
             finish()
         }
-        if (position == -1) longToast("Desværre")
+        if (position == -1) longToast("Funktionalitet mangler")
         else {
             val recipe = data.Recipes[position]
             editRecipeName.setText(recipe.name)
